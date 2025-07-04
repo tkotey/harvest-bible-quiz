@@ -31,18 +31,13 @@ export default function QuestionModal({
 }: QuestionModalProps) {
   const [isTimerActive, setIsTimerActive] = useState(false);
   
-  // Auto-start timer when modal opens with a question
+  // Reset timer when modal closes
   useEffect(() => {
-    if (isOpen && question && !showAnswer && !isTimerActive) {
-      // Automatically start the timer when question is displayed
-      setIsTimerActive(true);
-    }
-    
-    // Reset timer when modal closes
+    // Only reset the timer when modal closes
     if (!isOpen) {
       setIsTimerActive(false);
     }
-  }, [isOpen, question, showAnswer, isTimerActive]);
+  }, [isOpen]);
   
   // Store the current time left when pausing
   const [pausedTimeLeft, setPausedTimeLeft] = useState<number | null>(null);
@@ -89,6 +84,11 @@ export default function QuestionModal({
     }
   };
   
+  const handleStartTimer = () => {
+    // Start the timer when the user clicks the Start button
+    setIsTimerActive(true);
+  };
+  
   const handleResetTimer = () => {
     // Reset timer but keep it paused
     setIsTimerActive(false);
@@ -128,6 +128,18 @@ export default function QuestionModal({
             className="border border-amber-200"
             key={`timer-${timerDuration}`} /* Remove isTimerActive from key to prevent re-render on pause/resume */
           />
+          
+          {/* Timer Start Button - only show if timer is not active and answer is not revealed */}
+          {!isTimerActive && !showAnswer && (
+            <div className="mt-3 text-center">
+              <button
+                onClick={handleStartTimer}
+                className="bg-green-500 hover:bg-green-600 text-white font-medium py-2 px-6 rounded-lg transition-all flex items-center justify-center gap-2 mx-auto">
+                <span>▶️</span>
+                <span>Start Timer</span>
+              </button>
+            </div>
+          )}
         </div>
           
         {/* Question Meta Info */}
