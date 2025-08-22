@@ -118,7 +118,6 @@ export default function HarvestBibleQuiz() {
               selectedCategory={gameState.selectedCategory}
               selectedPoints={gameState.selectedPoints}
               onTestamentSelect={gameState.selectTestament}
-              onCategorySelect={gameState.selectCategory}
               onPointsSelect={gameState.selectPoints}
               onResetGame={gameState.resetGame}
             />
