@@ -11,7 +11,6 @@ interface GameBoardProps {
   selectedCategory: string | null;
   selectedPoints: number | null;
   onTestamentSelect: (testament: 'Old' | 'New') => void;
-  onCategorySelect: (category: string) => void;
   onPointsSelect: (points: number) => void;
   onResetGame: () => void;
 }
@@ -19,10 +18,7 @@ interface GameBoardProps {
 export default function GameBoard({
   currentTeam,
   selectedTestament,
-  selectedCategory: _selectedCategory,
-  selectedPoints: _selectedPoints,
   onTestamentSelect,
-  onCategorySelect: _onCategorySelect,
   onPointsSelect,
   onResetGame,
 }: GameBoardProps) {

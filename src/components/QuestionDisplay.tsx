@@ -22,7 +22,6 @@ export default function QuestionDisplay({
   currentTeamIndex,
   onRevealAnswer,
   onAwardPoints,
-  onNextTurn: _onNextTurn,
 }: QuestionDisplayProps) {
   const currentTeam = teams[currentTeamIndex];
   
