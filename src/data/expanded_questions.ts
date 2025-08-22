@@ -1,6 +1,17 @@
 import { Question } from '../types';
 
-export const expandedQuestionBank: Question[] = [
+// Raw format used in this file; will be normalized to `Question` below
+interface RawQuestion {
+  id: number | string;
+  category: string;
+  testament: 'Old' | 'New';
+  difficulty: 100 | 200 | 300 | 400;
+  question: string;
+  answer: string;
+  used?: boolean;
+}
+
+const rawExpandedQuestionBank: RawQuestion[] = [
   // OLD TESTAMENT - GENESIS (100-400 points)
   {
     id: 1,
@@ -1142,6 +1153,28 @@ export const expandedQuestionBank: Question[] = [
   }
 ];
 
+// Normalize raw data to conform to `Question`
+export const expandedQuestionBank: Question[] = rawExpandedQuestionBank.map((q) => {
+  const difficultyLabel: Question['difficulty'] =
+    q.difficulty === 100 ? 'Easy' :
+    q.difficulty === 200 ? 'Medium' :
+    q.difficulty === 300 ? 'Hard' : 'Expert';
+
+  const testamentLabel: Question['testament'] =
+    q.testament === 'Old' ? 'Old Testament' : 'New Testament';
+
+  return {
+    id: String(q.id),
+    category: q.category,
+    testament: testamentLabel,
+    difficulty: difficultyLabel,
+    points: q.difficulty,
+    question: q.question,
+    answer: q.answer,
+    used: q.used,
+  } satisfies Question;
+});
+
 // Helper function to get all unique categories
 export const getAllCategories = (): string[] => {
   const categories = expandedQuestionBank.map(q => q.category);
@@ -1149,7 +1182,7 @@ export const getAllCategories = (): string[] => {
 };
 
 // Helper function to get questions by testament
-export const getQuestionsByTestament = (testament: 'Old' | 'New'): Question[] => {
+export const getQuestionsByTestament = (testament: 'Old Testament' | 'New Testament'): Question[] => {
   return expandedQuestionBank.filter(q => q.testament === testament);
 };
 
