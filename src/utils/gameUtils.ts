@@ -14,10 +14,11 @@ export const getQuestionsByCategory = (questions: Question[], category: string):
 };
 
 export const getQuestionsByDifficulty = (questions: Question[], difficulty: number): Question[] => {
-  return questions.filter(q => q.difficulty === difficulty);
+  // `Question.difficulty` is a label, numeric comparisons should use `points`.
+  return questions.filter(q => q.points === difficulty);
 };
 
-export const getQuestionsByTestament = (questions: Question[], testament: 'Old' | 'New'): Question[] => {
+export const getQuestionsByTestament = (questions: Question[], testament: 'Old Testament' | 'New Testament'): Question[] => {
   return questions.filter(q => q.testament === testament);
 };
 
