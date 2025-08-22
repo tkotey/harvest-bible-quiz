@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { importQuestionsFromJson, validateQuestion } from '../utils/questionImporter';
+import { importQuestionsFromJson } from '../utils/questionImporter';
 import { Question } from '../types';
 
 interface QuestionImporterProps {
@@ -133,8 +133,8 @@ export default function QuestionImporter({ onImport }: QuestionImporterProps) {
             <h4 className="font-semibold text-amber-800 mb-2">Validation Rules:</h4>
             <ul className="list-disc pl-5 text-sm text-amber-700 space-y-1">
               <li>Each question must have a unique ID</li>
-              <li>Testament must be either "Old Testament" or "New Testament"</li>
-              <li>Difficulty must be "Easy", "Medium", or "Hard"</li>
+              <li>Testament must be either &quot;Old Testament&quot; or &quot;New Testament&quot;</li>
+              <li>Difficulty must be &quot;Easy&quot;, &quot;Medium&quot;, or &quot;Hard&quot;</li>
               <li>Points must be a number (typically 100, 200, or 300)</li>
               <li>All fields (id, question, answer, category, testament, difficulty, points) are required</li>
             </ul>

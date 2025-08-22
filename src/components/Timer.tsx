@@ -25,6 +25,7 @@ export default function Timer({
   const audioRef = useRef<HTMLAudioElement | null>(null);
   
   // Only reset timer when duration changes or on initial mount
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     // Only reset if we haven't started counting down yet
     if (timeLeft === duration || timeLeft === 0) {
@@ -51,6 +52,7 @@ export default function Timer({
   };
 
   // Timer countdown logic
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     let interval: ReturnType<typeof setInterval> | undefined = undefined;
     

@@ -1,5 +1,5 @@
 import { useState, useCallback } from 'react';
-import { Team, Question, GameState, GameActions } from '../types';
+import { Team, GameState, GameActions } from '../types';
 import { questionBank } from '../data/questions';
 import { getRandomQuestion } from '../utils/gameUtils';
 
@@ -119,14 +119,6 @@ export const useGameState = (): GameState & GameActions => {
 
   const selectPoints = useCallback((points: number) => {
     if (!gameState.selectedTestament) return;
-    
-    // Map numeric points to difficulty string and testament to full name
-    const difficultyMap: Record<number, string> = {
-      100: 'Easy',
-      200: 'Medium',
-      300: 'Hard',
-      400: 'Expert'
-    };
     
     const testamentMap: Record<string, string> = {
       'Old': 'Old Testament',

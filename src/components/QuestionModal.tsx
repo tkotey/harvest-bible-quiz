@@ -40,7 +40,7 @@ export default function QuestionModal({
   }, [isOpen]);
   
   // Store the current time left when pausing
-  const [pausedTimeLeft, setPausedTimeLeft] = useState<number | null>(null);
+  // Removed pausedTimeLeft as it was unused
   
   // Pause timer when answer is revealed
   useEffect(() => {
@@ -74,15 +74,7 @@ export default function QuestionModal({
     }
   };
 
-  const handleToggleTimer = () => {
-    if (isTimerActive) {
-      // If timer is active, pause it
-      setIsTimerActive(false);
-    } else {
-      // If timer is paused, resume or start it
-      setIsTimerActive(true);
-    }
-  };
+  // Removed handleToggleTimer as it was unused
   
   const handleStartTimer = () => {
     // Start the timer when the user clicks the Start button
@@ -92,7 +84,6 @@ export default function QuestionModal({
   const handleResetTimer = () => {
     // Reset timer but keep it paused
     setIsTimerActive(false);
-    setPausedTimeLeft(null); // Clear any saved paused time
     // Force the Timer component to reset its internal state
     setTimeout(() => {
       // This will force the Timer component to reset its timeLeft state
@@ -164,7 +155,7 @@ export default function QuestionModal({
                 style={{ backgroundColor: currentTeam.color }}
               ></div>
               <h3 className="text-xl font-bold text-gray-800">
-                {currentTeam.name}'s Turn
+                {currentTeam.name}&apos;s Turn
               </h3>
               <div className="bg-gray-100 px-3 py-1 rounded-full">
                 <span className="text-gray-700 font-medium">

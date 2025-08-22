@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import QuestionImporter from '../../components/QuestionImporter';
 import { Question } from '../../types';
-import { questionBank, getTotalQuestionCount, getTestamentQuestionCount } from '../../data/questions';
+import { getTotalQuestionCount, getTestamentQuestionCount } from '../../data/questions';
 import Link from 'next/link';
 
 const STORAGE_KEY = 'bibleQuizImportedQuestions';

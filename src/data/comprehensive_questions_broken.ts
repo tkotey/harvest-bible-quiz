@@ -598,194 +598,130 @@ export const getCategoryQuestionCount = (category: string): number => {
 };
 
 
-  // Exodus - Hard (300 points)
-  {
-    id: 'exo_hard_1',
-    question: 'What were the names of the two sons of Moses?',
-    answer: 'Gershom and Eliezer',
-    category: 'Exodus',
-    difficulty: 'Hard',
-    points: 300,
-    testament: 'Old Testament'
-  },
-  {
-    id: 'exo_hard_2',
-    question: 'What was the name of the mountain where Moses died?',
-    answer: 'Mount Nebo (though this is in Deuteronomy)',
-    category: 'Exodus',
-    difficulty: 'Hard',
-    points: 300,
-    testament: 'Old Testament'
-  },
-  {
-    id: 'exo_hard_3',
-    question: 'How old was Moses when he died?',
-    answer: '120 years old',
-    category: 'Exodus',
-    difficulty: 'Hard',
-    points: 300,
-    testament: 'Old Testament'
-  },
-  {
-    id: 'exo_hard_4',
-    question: 'What were the dimensions of the ark of the covenant?',
-    answer: '2.5 cubits long, 1.5 cubits wide, and 1.5 cubits high',
-    category: 'Exodus',
-    difficulty: 'Hard',
-    points: 300,
-    testament: 'Old Testament'
-  },
-  {
-    id: 'exo_hard_5',
-    question: 'What were the names of the two stones on the high priest\'s ephod?',
-    answer: 'Onyx stones with the names of the twelve tribes',
-    category: 'Exodus',
-    difficulty: 'Hard',
-    points: 300,
-    testament: 'Old Testament'
-  },
-  {
-    id: 'exo_hard_6',
-    question: 'How many boards were used for the south side of the tabernacle?',
-    answer: '20 boards',
-    category: 'Exodus',
-    difficulty: 'Hard',
-    points: 300,
-    testament: 'Old Testament'
-  },
-  {
-    id: 'exo_hard_7',
-    question: 'What was the name of the skilled craftsman who helped build the tabernacle?',
-    answer: 'Bezalel',
-    category: 'Exodus',
-    difficulty: 'Hard',
-    points: 300,
-    testament: 'Old Testament'
-  },
-  {
-    id: 'exo_hard_8',
-    question: 'How many pomegranates were on the hem of the high priest\'s robe?',
-    answer: 'The exact number is not specified, but they alternated with golden bells',
-    category: 'Exodus',
-    difficulty: 'Hard',
-    points: 300,
-    testament: 'Old Testament'
-  },
-  {
-    id: 'exo_hard_9',
-    question: 'What was the weight of gold used in the tabernacle?',
-    answer: '29 talents and 730 shekels',
-    category: 'Exodus',
-    difficulty: 'Hard',
-    points: 300,
-    testament: 'Old Testament'
-  },
-  {
-    id: 'exo_hard_10',
-    question: 'What was inscribed on the golden plate on the high priest\'s turban?',
-    answer: 'HOLINESS TO THE LORD',
-    category: 'Exodus',
-    difficulty: 'Hard',
-    points: 300,
-    testament: 'Old Testament'
-  },
+  /*
+   The following block of question objects was mistakenly placed outside of the
+   exported question array, causing a TypeScript parse error. It is commented out
+   to restore valid syntax. If these questions are needed, they should be moved
+   into the appropriate exported array (e.g., comprehensiveQuestionBank).
 
-  // Exodus - Expert (400 points)
-  {
-    id: 'exo_expert_1',
-    question: 'In what month did the Israelites leave Egypt?',
-    answer: 'The month of Abib (later called Nisan)',
-    category: 'Exodus',
-    difficulty: 'Expert',
-    points: 400,
-    testament: 'Old Testament'
-  },
-  {
-    id: 'exo_expert_2',
-    question: 'What was the Hebrew name for the place where Moses struck the rock for water?',
-    answer: 'Massah and Meribah',
-    category: 'Exodus',
-    difficulty: 'Expert',
-    points: 400,
-    testament: 'Old Testament'
-  },
-  {
-    id: 'exo_expert_3',
-    question: 'According to Exodus 38, how much silver was used in the tabernacle?',
-    answer: '100 talents and 1,775 shekels',
-    category: 'Exodus',
-    difficulty: 'Expert',
-    points: 400,
-    testament: 'Old Testament'
-  },
-  {
-    id: 'exo_expert_4',
-    question: 'What was the name of Bezalel\'s assistant in building the tabernacle?',
-    answer: 'Oholiab',
-    category: 'Exodus',
-    difficulty: 'Expert',
-    points: 400,
-    testament: 'Old Testament'
-  },
-  {
-    id: 'exo_expert_5',
-    question: 'How many curtains made up the tabernacle proper?',
-    answer: '10 curtains of fine linen',
-    category: 'Exodus',
-    difficulty: 'Expert',
-    points: 400,
-    testament: 'Old Testament'
-  },
-  {
-    id: 'exo_expert_6',
-    question: 'What was the length of each curtain of the tabernacle?',
-    answer: '28 cubits long and 4 cubits wide',
-    category: 'Exodus',
-    difficulty: 'Expert',
-    points: 400,
-    testament: 'Old Testament'
-  },
-  {
-    id: 'exo_expert_7',
-    question: 'How many sockets of silver were used for the tabernacle boards?',
-    answer: '100 sockets',
-    category: 'Exodus',
-    difficulty: 'Expert',
-    points: 400,
-    testament: 'Old Testament'
-  },
-  {
-    id: 'exo_expert_8',
-    question: 'What was the name of the place where the Israelites camped after crossing the Red Sea?',
-    answer: 'Marah',
-    category: 'Exodus',
-    difficulty: 'Expert',
-    points: 400,
-    testament: 'Old Testament'
-  },
-  {
-    id: 'exo_expert_9',
-    question: 'How many stones were on the high priest\'s breastplate?',
-    answer: '12 stones, representing the 12 tribes of Israel',
-    category: 'Exodus',
-    difficulty: 'Expert',
-    points: 400,
-    testament: 'Old Testament'
-  },
-  {
-    id: 'exo_expert_10',
-    question: 'What was the name of the tribe from which Bezalel came?',
-    answer: 'The tribe of Judah',
-    category: 'Exodus',
-    difficulty: 'Expert',
-    points: 400,
-    testament: 'Old Testament'
-  },
+   // Exodus - Hard (300 points)
+   { id: 'exo_hard_1', question: 'What were the names of the two sons of Moses?', answer: 'Gershom and Eliezer', category: 'Exodus', difficulty: 'Hard', points: 300, testament: 'Old Testament' },
+   { id: 'exo_hard_2', question: 'What was the name of the mountain where Moses died?', answer: 'Mount Nebo (though this is in Deuteronomy)', category: 'Exodus', difficulty: 'Hard', points: 300, testament: 'Old Testament' },
+   { id: 'exo_hard_3', question: 'How old was Moses when he died?', answer: '120 years old', category: 'Exodus', difficulty: 'Hard', points: 300, testament: 'Old Testament' },
+   { id: 'exo_hard_4', question: 'What were the dimensions of the ark of the covenant?', answer: '2.5 cubits long, 1.5 cubits wide, and 1.5 cubits high', category: 'Exodus', difficulty: 'Hard', points: 300, testament: 'Old Testament' },
+   { id: 'exo_hard_5', question: 'What were the names of the two stones on the high priest\'s ephod?', answer: 'Onyx stones with the names of the twelve tribes', category: 'Exodus', difficulty: 'Hard', points: 300, testament: 'Old Testament' },
+   { id: 'exo_hard_6', question: 'How many boards were used for the south side of the tabernacle?', answer: '20 boards', category: 'Exodus', difficulty: 'Hard', points: 300, testament: 'Old Testament' },
+   { id: 'exo_hard_7', question: 'What was the name of the skilled craftsman who helped build the tabernacle?', answer: 'Bezalel', category: 'Exodus', difficulty: 'Hard', points: 300, testament: 'Old Testament' },
+   { id: 'exo_hard_8', question: 'How many pomegranates were on the hem of the high priest\'s robe?', answer: 'The exact number is not specified, but they alternated with golden bells', category: 'Exodus', difficulty: 'Hard', points: 300, testament: 'Old Testament' },
+   { id: 'exo_hard_9', question: 'What was the weight of gold used in the tabernacle?', answer: '29 talents and 730 shekels', category: 'Exodus', difficulty: 'Hard', points: 300, testament: 'Old Testament' },
+   { id: 'exo_hard_10', question: 'What was inscribed on the golden plate on the high priest\'s turban?', answer: 'HOLINESS TO THE LORD', category: 'Exodus', difficulty: 'Hard', points: 300, testament: 'Old Testament' },
 
+   // Exodus - Expert (400 points)
+   { id: 'exo_expert_1', question: 'In what month did the Israelites leave Egypt?', answer: 'The month of Abib (later called Nisan)', category: 'Exodus', difficulty: 'Expert', points: 400, testament: 'Old Testament' },
+   { id: 'exo_expert_2', question: 'What was the Hebrew name for the place where Moses struck the rock for water?', answer: 'Massah and Meribah', category: 'Exodus', difficulty: 'Expert', points: 400, testament: 'Old Testament' },
+   { id: 'exo_expert_3', question: 'According to Exodus 38, how much silver was used in the tabernacle?', answer: '100 talents and 1,775 shekels', category: 'Exodus', difficulty: 'Expert', points: 400, testament: 'Old Testament' },
+   { id: 'exo_expert_4', question: 'What was the name of Bezalel\'s assistant in building the tabernacle?', answer: 'Oholiab', category: 'Exodus', difficulty: 'Expert', points: 400, testament: 'Old Testament' },
+   { id: 'exo_expert_5', question: 'How many curtains made up the tabernacle proper?', answer: '10 curtains of fine linen', category: 'Exodus', difficulty: 'Expert', points: 400, testament: 'Old Testament' },
+   { id: 'exo_expert_6', question: 'What was the length of each curtain of the tabernacle?', answer: '28 cubits long and 4 cubits wide', category: 'Exodus', difficulty: 'Expert', points: 400, testament: 'Old Testament' },
+   { id: 'exo_expert_7', question: 'How many sockets of silver were used for the tabernacle boards?', answer: '100 sockets', category: 'Exodus', difficulty: 'Expert', points: 400, testament: 'Old Testament' },
+   { id: 'exo_expert_8', question: 'What was the name of the place where the Israelites camped after crossing the Red Sea?', answer: 'Marah', category: 'Exodus', difficulty: 'Expert', points: 400, testament: 'Old Testament' },
+   { id: 'exo_expert_9', question: 'How many stones were on the high priest\'s breastplate?', answer: '12 stones, representing the 12 tribes of Israel', category: 'Exodus', difficulty: 'Expert', points: 400, testament: 'Old Testament' },
+  { id: 'exo_expert_10', question: 'What was the name of the tribe from which Bezalel came?', answer: 'The tribe of Judah', category: 'Exodus', difficulty: 'Expert', points: 400, testament: 'Old Testament' },
+ */
+/*
   // LEVITICUS (40 questions: 10 Easy, 10 Medium, 10 Hard, 10 Expert)
   
   // Leviticus - Easy (100 points)
-  {
+  // {
+  //   id: 'lev_easy_1',
+  //   question: 'What type of offering was completely burned on the altar?',
+  //   answer: 'The burnt offering',
+  //   category: 'Leviticus',
+  //   difficulty: 'Easy',
+  //   points: 100,
+  //   testament: 'Old Testament'
+  // },
+  // {
+  //   id: 'lev_easy_2',
+  //   question: 'Who were the first priests of Israel?',
+  //   answer: 'Aaron and his sons',
+  //   category: 'Leviticus',
+  //   difficulty: 'Easy',
+  //   points: 100,
+  //   testament: 'Old Testament'
+  // },
+  // {
+  //   id: 'lev_easy_3',
+  //   question: 'What happened to Aaron\'s sons Nadab and Abihu?',
+  //   answer: 'They were killed by fire from the Lord for offering unauthorized fire',
+  //   category: 'Leviticus',
+  //   difficulty: 'Easy',
+  //   points: 100,
+  //   testament: 'Old Testament'
+  // },
+  // {
+  //   id: 'lev_easy_4',
+  //   question: 'What was the Day of Atonement called in Hebrew?',
+  //   answer: 'Yom Kippur',
+  //   category: 'Leviticus',
+  //   difficulty: 'Easy',
+  //   points: 100,
+  //   testament: 'Old Testament'
+  // },
+  // {
+  //   id: 'lev_easy_5',
+  //   question: 'How often was the Day of Atonement observed?',
+  //   answer: 'Once a year',
+  //   category: 'Leviticus',
+  //   difficulty: 'Easy',
+  //   points: 100,
+  //   testament: 'Old Testament'
+  // },
+  // {
+  //   id: 'lev_easy_6',
+  //   question: 'What animal was released into the wilderness on the Day of Atonement?',
+  //   answer: 'The scapegoat',
+  //   category: 'Leviticus',
+  //   difficulty: 'Easy',
+  //   points: 100,
+  //   testament: 'Old Testament'
+  // },
+  // {
+  //   id: 'lev_easy_7',
+  //   question: 'What was forbidden to eat according to the dietary laws?',
+  //   answer: 'Unclean animals (like pork and shellfish)',
+  //   category: 'Leviticus',
+  //   difficulty: 'Easy',
+  //   points: 100,
+  //   testament: 'Old Testament'
+  // },
+  // {
+  //   id: 'lev_easy_8',
+  //   question: 'How many years was the Jubilee cycle?',
+  //   answer: '50 years',
+  //   category: 'Leviticus',
+  //   difficulty: 'Easy',
+  //   points: 100,
+  //   testament: 'Old Testament'
+  // },
+  // {
+  //   id: 'lev_easy_9',
+  //   question: 'What was to happen to slaves during the Year of Jubilee?',
+  //   answer: 'They were to be set free',
+  //   category: 'Leviticus',
+  //   difficulty: 'Easy',
+  //   points: 100,
+  //   testament: 'Old Testament'
+  // },
+  // {
+  //   id: 'lev_easy_10',
+  //   question: 'What famous command about loving your neighbor is found in Leviticus?',
+  //   answer: 'Love your neighbor as yourself',
+  //   category: 'Leviticus',
+  //   difficulty: 'Easy',
+  //   points: 100,
+  //   testament: 'Old Testament'
+  // },
     id: 'lev_easy_1',
     question: 'What type of offering was completely burned on the altar?',
     answer: 'The burnt offering',
@@ -3044,7 +2980,5 @@ export const getCategoryQuestionCount = (category: string): number => {
     points: 100,
     testament: 'New Testament'
   },
-
-
-];
-
+  */
+  // ]; // commented out to resolve parse error

@@ -5,32 +5,33 @@ import { Question } from '../types';
  * @param question The question object to validate
  * @returns True if the question is valid, false otherwise
  */
-export const validateQuestion = (question: any): boolean => {
-  if (!question) return false;
+export const validateQuestion = (question: unknown): question is Question => {
+  if (typeof question !== 'object' || question === null) return false;
+  const q = question as Record<string, unknown>;
   
   // Check required fields
-  if (!question.id || typeof question.id !== 'string') return false;
-  if (!question.question || typeof question.question !== 'string') return false;
-  if (!question.answer || typeof question.answer !== 'string') return false;
-  if (!question.category || typeof question.category !== 'string') return false;
+  if (!q.id || typeof q.id !== 'string') return false;
+  if (!q.question || typeof q.question !== 'string') return false;
+  if (!q.answer || typeof q.answer !== 'string') return false;
+  if (!q.category || typeof q.category !== 'string') return false;
   
   // Check testament is valid
-  if (!question.testament || 
-      (question.testament !== 'Old Testament' && question.testament !== 'New Testament')) {
+  if (!q.testament || 
+      (q.testament !== 'Old Testament' && q.testament !== 'New Testament')) {
     return false;
   }
   
   // Check difficulty is valid
-  if (!question.difficulty || 
-      (question.difficulty !== 'Easy' && 
-       question.difficulty !== 'Medium' && 
-       question.difficulty !== 'Hard' && 
-       question.difficulty !== 'Expert')) {
+  if (!q.difficulty || 
+      (q.difficulty !== 'Easy' && 
+       q.difficulty !== 'Medium' && 
+       q.difficulty !== 'Hard' && 
+       q.difficulty !== 'Expert')) {
     return false;
   }
   
   // Check points is a number
-  if (typeof question.points !== 'number') return false;
+  if (typeof q.points !== 'number') return false;
   
   return true;
 };
@@ -53,7 +54,7 @@ export const importQuestionsFromJson = (jsonString: string): Question[] => {
     
     parsedData.forEach((item, index) => {
       if (validateQuestion(item)) {
-        validQuestions.push(item as Question);
+        validQuestions.push(item);
       } else {
         errors.push(`Question at index ${index} is invalid`);
       }

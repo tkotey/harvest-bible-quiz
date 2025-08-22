@@ -3,7 +3,13 @@
 // Function to play the timer end sound
 export const playTimerEndSound = () => {
   // Create a simple beep sound using the Web Audio API
-  const audioContext = new (window.AudioContext || (window as any).webkitAudioContext)();
+  const AudioCtx =
+    window.AudioContext ||
+    (window as unknown as { webkitAudioContext?: typeof AudioContext }).webkitAudioContext;
+
+  if (!AudioCtx) return;
+
+  const audioContext = new AudioCtx();
   
   // Create an oscillator for a beeping sound
   const oscillator = audioContext.createOscillator();

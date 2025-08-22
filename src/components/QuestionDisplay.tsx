@@ -22,7 +22,7 @@ export default function QuestionDisplay({
   currentTeamIndex,
   onRevealAnswer,
   onAwardPoints,
-  onNextTurn,
+  onNextTurn: _onNextTurn,
 }: QuestionDisplayProps) {
   const currentTeam = teams[currentTeamIndex];
   
@@ -67,7 +67,7 @@ export default function QuestionDisplay({
             style={{ backgroundColor: currentTeam.color }}
           ></div>
           <h3 className="text-xl font-bold text-gray-800">
-            {currentTeam.name}'s Turn
+            {currentTeam.name}&apos;s Turn
           </h3>
           <div className="bg-gray-100 px-3 py-1 rounded-full">
             <span className="text-gray-700 font-medium">

@@ -19,15 +19,14 @@ interface GameBoardProps {
 export default function GameBoard({
   currentTeam,
   selectedTestament,
-  selectedCategory,
-  selectedPoints,
+  selectedCategory: _selectedCategory,
+  selectedPoints: _selectedPoints,
   onTestamentSelect,
-  onCategorySelect,
+  onCategorySelect: _onCategorySelect,
   onPointsSelect,
   onResetGame,
 }: GameBoardProps) {
   // No longer need categories with modal-based UI
-  const pointValues = [100, 200, 300];
   const [oldTestamentCount, setOldTestamentCount] = useState<number>(0);
   const [newTestamentCount, setNewTestamentCount] = useState<number>(0);
   const [isDifficultyModalOpen, setIsDifficultyModalOpen] = useState(false);
@@ -38,12 +37,7 @@ export default function GameBoard({
     setNewTestamentCount(getTestamentQuestionCount('New Testament'));
   }, []);
 
-  const difficultyInfo = {
-    100: { emoji: '🌱', label: 'Easy', color: 'from-green-400 to-emerald-500', bgColor: 'from-green-100 to-emerald-100', textColor: 'text-green-800' },
-    200: { emoji: '🌾', label: 'Medium', color: 'from-yellow-400 to-amber-500', bgColor: 'from-yellow-100 to-amber-100', textColor: 'text-yellow-800' },
-    300: { emoji: '🌽', label: 'Hard', color: 'from-orange-400 to-red-500', bgColor: 'from-orange-100 to-red-100', textColor: 'text-orange-800' },
-    400: { emoji: '🍂', label: 'Expert', color: 'from-purple-400 to-pink-500', bgColor: 'from-purple-100 to-pink-100', textColor: 'text-purple-800' },
-  };
+  // difficultyInfo no longer used here; kept in other components where needed
 
   const handleTestamentSelect = (testament: 'Old' | 'New') => {
     onTestamentSelect(testament);
