@@ -15,9 +15,9 @@ const deduplicateQuestions = (questions: Question[]): Question[] => {
       const normalizedQuestion: Question = {
         ...question,
         id: id,
-        testament: question.testament === 'Old' || question.testament === 'New' 
-          ? `${question.testament} Testament` 
-          : question.testament,
+        // `Question['testament']` is already 'Old Testament' | 'New Testament'
+        // Pass through without attempting to coerce short labels here.
+        testament: question.testament,
         difficulty: typeof question.difficulty === 'number' 
           ? question.difficulty === 100 ? 'Easy' 
             : question.difficulty === 200 ? 'Medium' 
