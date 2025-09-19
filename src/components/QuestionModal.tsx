@@ -178,21 +178,38 @@ export default function QuestionModal({
         {/* Question */}
         <div className="text-center mb-8">
           <div className="text-6xl mb-4 animate-pulse">❓</div>
-          <h3 className="text-2xl md:text-3xl font-bold text-gray-800 leading-relaxed mb-6 bg-gradient-to-r from-amber-50 to-yellow-50 p-6 rounded-xl border border-amber-200 shadow-inner">
-            {question.question}
-          </h3>
           
-          {!showAnswer && (
-            <button
-              onClick={onRevealAnswer}
-              className="bg-gradient-to-r from-amber-500 to-yellow-600 text-white font-bold py-4 px-8 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
-            >
-              <span className="flex items-center justify-center gap-3">
-                <span>🌾</span>
-                <span>Reveal the Harvest</span>
-                <span>🌾</span>
-              </span>
-            </button>
+          {/* Only show question text when timer has started */}
+          {isTimerActive || showAnswer ? (
+            <>
+              <h3 className="text-2xl md:text-3xl font-bold text-gray-800 leading-relaxed mb-6 bg-gradient-to-r from-amber-50 to-yellow-50 p-6 rounded-xl border border-amber-200 shadow-inner">
+                {question.question}
+              </h3>
+              
+              {!showAnswer && (
+                <button
+                  onClick={onRevealAnswer}
+                  className="bg-gradient-to-r from-amber-500 to-yellow-600 text-white font-bold py-4 px-8 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+                >
+                  <span className="flex items-center justify-center gap-3">
+                    <span>🌾</span>
+                    <span>Reveal the Harvest</span>
+                    <span>🌾</span>
+                  </span>
+                </button>
+              )}
+            </>
+          ) : (
+            <div className="text-2xl md:text-3xl font-bold text-gray-600 leading-relaxed mb-6 bg-gradient-to-r from-gray-50 to-gray-100 p-6 rounded-xl border border-gray-200 shadow-inner">
+              <div className="flex items-center justify-center gap-3 mb-4">
+                <span>⏳</span>
+                <span>Question will appear when timer starts</span>
+                <span>⏳</span>
+              </div>
+              <p className="text-lg text-gray-500">
+                Click the "Start Timer" button above to begin the challenge!
+              </p>
+            </div>
           )}
         </div>
 
