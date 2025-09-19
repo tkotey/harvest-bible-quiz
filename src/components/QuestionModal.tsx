@@ -207,7 +207,7 @@ export default function QuestionModal({
                 <span>⏳</span>
               </div>
               <p className="text-lg text-gray-500">
-                Click the "Start Timer" button above to begin the challenge!
+                Click the &quot;Start Timer&quot; button above to begin the challenge!
               </p>
             </div>
           )}
