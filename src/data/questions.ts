@@ -2,6 +2,10 @@ import { questionBank as stableQuestionBank } from './stable_questions';
 import { additionalQuestionBank } from './additional_questions';
 import { expandedQuestionBank } from './expanded_questions';
 import { comprehensiveQuestionBank } from './comprehensive_questions';
+import { batch1QuestionBank } from './batch1_questions';
+import { batch2QuestionBank } from './batch2_questions';
+import { batch3QuestionBank } from './batch3_questions';
+import { batch4QuestionBank } from './batch4_questions';
 import { Question } from '../types';
 
 // Helper function to deduplicate questions by ID
@@ -45,7 +49,11 @@ export const questionBank: Question[] = deduplicateQuestions([
   ...stableQuestionBank, 
   ...additionalQuestionBank,
   ...expandedQuestionBank,
-  ...comprehensiveQuestionBank
+  ...comprehensiveQuestionBank,
+  ...batch1QuestionBank,
+  ...batch2QuestionBank,
+  ...batch3QuestionBank,
+  ...batch4QuestionBank
 ]);
 
 // Helper function to get all unique categories
